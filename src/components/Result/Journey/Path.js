@@ -17,8 +17,8 @@ function Path({ data }) {
   
   return (
     <PathWrap>
-      <Place>{ moment(aTime).format('DD/MM/YYYY') }: { cityFrom } ({ flyFrom })</Place>
-      <Place>{ moment(dTime).format('DD/MM/YYYY') }: { cityTo } ({ flyTo })</Place>
+      <Place>{ moment.unix(dTime).format('DD/MM/YYYY HH:mm') }: { cityFrom } ({ flyFrom })</Place>
+      <Place>{ moment.unix(aTime).format('DD/MM/YYYY HH:mm') }: { cityTo } ({ flyTo })</Place>
     </PathWrap>
   );
 }

@@ -16,7 +16,7 @@ const Duration = styled.span`
 function BaseInfoBar({ duration, price }) {
   return (
     <InfoBar>
-      <Price>{ price } EUR</Price>
+      <Price>{ price } €</Price>
       <Duration>Duration: { duration }</Duration>
     </InfoBar>
   );
