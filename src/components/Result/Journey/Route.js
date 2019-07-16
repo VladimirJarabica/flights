@@ -2,6 +2,7 @@ import React from 'react';
 import Path from './Path'
 
 function Route(data) {
+  
   const getPaths = () => {
     let routes = []
     for (const path in data) {
@@ -9,6 +10,7 @@ function Route(data) {
     }
     return routes
   }
+  
   return (
     <div>
       { getPaths() }
