@@ -23,7 +23,6 @@ export const findResult = (flightData) => {
 		axios
 			.get('', { params: data })
 			.then(({ data }) => {
-				console.log(data)
 				dispatch(resultSuccess(data));
 			})
 			.catch(() => {

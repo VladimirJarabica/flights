@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { setQuery } from '../../store/actions/query';
 import { findResult } from '../../store/actions/result'
-import App from './App';
+import SearchBar from './SearchBar';
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -10,4 +10,4 @@ const mapDispatchToProps = dispatch => {
   }
 };
 
-export default connect(null, mapDispatchToProps,)(App);
+export default connect(null, mapDispatchToProps,)(SearchBar);

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import Autosuggest from 'react-autosuggest'
+import './DestinationInput.css'
 
 export default function DestinationInput(props) {
   let [value, setValue] = useState('')
@@ -15,13 +16,16 @@ export default function DestinationInput(props) {
         return response.json()
       })
       .then((result) => {
+        let sugestions = result
+          .filter(i => i.type === 2)
+          .map(i => {
+            return {
+              id: i.id,
+              name: i.value
+            }
+          })
         setIsLoading(false)
-        setSuggestions(result.map(i => {
-          return {
-            id: i.id,
-            name: i.value
-          }
-        }))
+        setSuggestions(sugestions)
       })
   }
   

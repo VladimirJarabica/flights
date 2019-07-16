@@ -1,12 +1,13 @@
 import React from 'react';
 import { useState } from 'react';
 import DestinationInput from '../destinationInput/DestinationInput';
-import DatePicker from 'react-datepicker'
+import DatePicker from 'react-datepicker/es'
+import "react-datepicker/dist/react-datepicker.css";
 import moment from 'moment'
 
-function App(props) {
+function SearchBar(props) {
   let [dateFrom, setDateFrom] = useState(new Date())
-  let [dateTo, setDateTo] = useState(moment().add(7, 'days').toDate())
+  let [dateTo, setDateTo] = useState(moment().add(2, 'days').toDate())
   let [from, setFrom] = useState('')
   let [to, setTo] = useState('')
   
@@ -49,4 +50,4 @@ function App(props) {
   );
 }
 
-export default App;
+export default SearchBar;
