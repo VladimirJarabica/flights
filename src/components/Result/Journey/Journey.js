@@ -5,6 +5,7 @@ import BagInfo from './BagInfo'
 import Route from './Route'
 import styled from 'styled-components'
 import { MoreWrap, ShowMoreButton, StyledDetails } from './components'
+import TextInfo from './TextInfoContainer'
 
 const JourneyWrap = styled.div`
   margin: 10px;
@@ -40,6 +41,7 @@ function Journey({ data }) {
   return (
     <JourneyWrap>
       <BaseInfoBar duration={fly_duration} price={price} />
+      <TextInfo data={data} />
       <DetailsWrap>
         <ShowMoreButton onClick={() => setDisplpayInfo(!displayInfo)}>
           <StyledDetails size={15} />
