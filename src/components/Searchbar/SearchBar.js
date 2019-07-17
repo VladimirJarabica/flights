@@ -3,7 +3,21 @@ import { useState } from 'react'
 import DestinationInput from './destinationInput/DestinationInput'
 import "react-datepicker/dist/react-datepicker.css"
 import moment from 'moment'
-import { ArrowWrap, DateWrap, DestWrap, PlaceWrap, StyledDatePicker } from './components'
+import {
+  ArrowWrap,
+  DateWrap,
+  DestWrap,
+  PlaceWrap,
+  ReturnStyledDatePicker,
+  ReturnWrap,
+  StyledDatePicker,
+  StyledDatePickerWrap,
+  SubmitButton,
+  SubmitButtonWrap,
+  GrayPlaneArrival,
+  GrayPlaneDeparture,
+  StyledDatePickerWrapArrival
+} from './components'
 import { LongArrowAltRight } from 'styled-icons/fa-solid/LongArrowAltRight'
 
 function SearchBar(props) {
@@ -45,27 +59,32 @@ function SearchBar(props) {
       </PlaceWrap>
       
       <DateWrap>
-        <StyledDatePicker
-          selected={dateFrom}
-          selectsStart
-          startDate={dateFrom}
-          endDate={new Date()}
-          onChange={e => setDateFrom(e)}
-        />
-    
+        <StyledDatePickerWrap>
+          <GrayPlaneDeparture size={15} />
+          <StyledDatePicker
+            selected={dateFrom}
+            selectsStart
+            startDate={dateFrom}
+            endDate={new Date()}
+            onChange={e => setDateFrom(e)}
+          />
+        </StyledDatePickerWrap>
         {
           isReturn &&
-          <StyledDatePicker
-            selected={dateTo}
-            selectsEnd
-            startDate={dateTo}
-            endDate={new Date()}
-            onChange={e => setDateTo(e)}
-            minDate={dateFrom}
-          />
+            <StyledDatePickerWrapArrival>
+              <GrayPlaneArrival size={15} />
+              <ReturnStyledDatePicker
+                selected={dateTo}
+                selectsEnd
+                startDate={dateTo}
+                endDate={new Date()}
+                onChange={e => setDateTo(e)}
+                minDate={dateFrom}
+              />
+            </StyledDatePickerWrapArrival>
         }
         
-        <label>
+        <ReturnWrap>
           <input
             name="return"
             type="checkbox"
@@ -73,10 +92,11 @@ function SearchBar(props) {
             onChange={handleReturnCheck}
           />
           Return
-        </label>
-  
+        </ReturnWrap>
       </DateWrap>
-      <button onClick={handleSubmit}>Find flights</button>
+      <SubmitButtonWrap>
+        <SubmitButton onClick={handleSubmit}>Find flights</SubmitButton>
+      </SubmitButtonWrap>
     </div>
   )
 }
