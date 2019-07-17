@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import Autosuggest from 'react-autosuggest'
 import './DestinationInput.css'
+import axios from 'axios'
 
 export default function DestinationInput(props) {
   let [value, setValue] = useState('')
@@ -11,12 +12,9 @@ export default function DestinationInput(props) {
   const loadSuggestions = value => {
     setIsLoading(true)
     
-    fetch(`https://api.skypicker.com/places?v=2&locale=en&term=${value}`)
-      .then(response => {
-        return response.json()
-      })
-      .then((result) => {
-        let sugestions = result
+    axios.get(`https://api.skypicker.com/places?v=2&locale=en&term=${value}`)
+      .then(({ data }) => {
+        let sugestions = data
           .filter(i => i.type === 2)
           .map(i => {
             return {
