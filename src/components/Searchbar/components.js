@@ -57,7 +57,7 @@ export const SubmitButtonWrap = styled.div`
 
 export const SubmitButton = styled.button`
 	border: none;
-	background: #00C6AA;
+	background: #02BAB9;
 	border-radius: 3px;
 	padding: 9px 16px;
 	font-size: 15px;

@@ -1,31 +1,48 @@
 import React from 'react'
-import styled from 'styled-components'
+import { useState } from 'react'
+import {
+  BagHeader,
+  MoreWrap,
+  BagWrap,
+  PriceIcon,
+  ShowMoreButton,
+  SizeIcon,
+  StyledShoppingBag,
+  WeightIcon
+} from './components'
 
-const BagWrap = styled.div`
-  width: 50%;
-  float: left;
-  box-sizing: border-box;
-  padding: 10px;
-  background: #f1f1f1;
-`
 
 function BagInfo({ baglimit, price }) {
+  let [displayInfo, setDisplpayInfo] = useState(false)
+  
   const { hand_height, hand_length, hand_width, hand_weight, hold_height, hold_length, hold_width, hold_weight } = baglimit
   
   return (
     <div>
-      Luggage info >
-      <div>
-        <BagWrap>
-          <h3>Cabin luggage</h3>
-          { hand_height } x { hand_length } x { hand_width } ({ hand_weight } Kg)
-        </BagWrap>
-        <BagWrap>
-          <h3>Trunk luggage</h3>
-          { hold_height } x { hold_length } x { hold_width } ({ hold_weight } Kg)
-          { price[1] } EUR
-        </BagWrap>
-      </div>
+      <ShowMoreButton onClick={() => setDisplpayInfo(!displayInfo)}>
+        <StyledShoppingBag size={20} />
+        Luggage info
+      </ShowMoreButton>
+      { displayInfo &&
+        <MoreWrap>
+          <BagWrap>
+            <BagHeader>Cabin luggage</BagHeader><br />
+            <SizeIcon size={15} />
+            { hand_height }cm x { hand_length }cm x { hand_width }cm <br />
+            <WeightIcon size={15} />
+            { hand_weight } Kg<br />
+          </BagWrap>
+          <BagWrap>
+            <BagHeader>Checked luggage</BagHeader><br />
+            <SizeIcon size={15} />
+            { hold_height }cm x { hold_length }cm x { hold_width }cm<br />
+            <WeightIcon size={15} />
+            { hold_weight } Kg<br />
+            <PriceIcon size={15} />
+            { price[1] } EUR
+          </BagWrap>
+        </MoreWrap>
+      }
     </div>
   )
 }

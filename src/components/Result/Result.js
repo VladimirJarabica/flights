@@ -1,7 +1,6 @@
 import React from 'react'
 import Journey from './Journey/Journey'
 
-
 function Result({ data }) {
   
   const getJourneys = () => {
