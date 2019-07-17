@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 const BagWrap = styled.div`
   width: 50%;
@@ -7,7 +7,7 @@ const BagWrap = styled.div`
   box-sizing: border-box;
   padding: 10px;
   background: #f1f1f1;
-`;
+`
 
 function BagInfo({ baglimit, price }) {
   const { hand_height, hand_length, hand_width, hand_weight, hold_height, hold_length, hold_width, hold_weight } = baglimit
@@ -27,7 +27,7 @@ function BagInfo({ baglimit, price }) {
         </BagWrap>
       </div>
     </div>
-  );
+  )
 }
 
-export default BagInfo;
+export default BagInfo

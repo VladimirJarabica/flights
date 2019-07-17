@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import Journey from './Journey/Journey'
 
 
@@ -16,7 +16,7 @@ function Result({ data }) {
     <div>
       { getJourneys() }
     </div>
-  );
+  )
 }
 
-export default Result;
+export default Result

@@ -1,13 +1,13 @@
-import * as types from './actionTypes';
-import axios from '../../services/AxiosFactory';
+import * as types from './actionTypes'
+import axios from '../../services/AxiosFactory'
 import moment from 'moment'
 
 export const findResult = (flightData) => {
 	return dispatch => {
-		dispatch(resultLoading());
+		dispatch(resultLoading())
 		
-		let today = new Date();
-		let nextWeek = moment().add(7, 'days').toDate();
+		let today = new Date()
+		let nextWeek = moment().add(7, 'days').toDate()
 		let data = {
 			flyFrom: flightData.from ? flightData.from : 'prague_cz',
 			to: flightData.to ? flightData.to : 'paris_fr',
@@ -28,30 +28,30 @@ export const findResult = (flightData) => {
 		axios
 			.get('', { params: data })
 			.then(({ data }) => {
-				dispatch(resultSuccess(data));
+				dispatch(resultSuccess(data))
 			})
 			.catch(() => {
-				dispatch(resultError('error'));
-			});
+				dispatch(resultError('error'))
+			})
 	}
-};
+}
 
 export const resultSuccess = data => {
 	return {
 		type: types.RESULT_SUCCESS,
 		data
-	};
-};
+	}
+}
 
 export const resultError = error => {
 	return {
 		type: types.RESULT_ERROR,
 		error
-	};
-};
+	}
+}
 
 export const resultLoading = () => {
 	return {
 		type: types.RESULT_LOADING,
-	};
-};
+	}
+}

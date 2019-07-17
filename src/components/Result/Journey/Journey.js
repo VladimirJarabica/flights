@@ -2,7 +2,7 @@ import React from 'react';
 import BaseInfoBar from './BaseInfoBar'
 import BagInfo from './BagInfo'
 import Route from './Route'
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const JourneyWrap = styled.div`
   margin: 10px;
@@ -12,11 +12,11 @@ const JourneyWrap = styled.div`
   
   font-family: helvetica;
   font-size: 13px;
-`;
+`
 
 const Routes = styled.div`
   margin: 20px;
-`;
+`
 
 function Journey({ data }) {
   const { price, baglimit, bags_price, fly_duration, route } = data
@@ -37,7 +37,7 @@ function Journey({ data }) {
       </Routes>
       <BagInfo baglimit={baglimit} price={bags_price} />
     </JourneyWrap>
-  );
+  )
 }
 
-export default Journey;
+export default Journey

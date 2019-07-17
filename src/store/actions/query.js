@@ -1,7 +1,10 @@
 import * as types from './actionTypes'
 import { findResult } from './result'
 
-export const setQuery = data => dispatch => dispatch(findResult(data))
+export const setQuery = data => dispatch => {
+	dispatch(findResult(data))
+	dispatch(storeQuery(data))
+}
 
 export const storeQuery = data => {
 	return {

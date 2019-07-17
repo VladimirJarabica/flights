@@ -1,5 +1,5 @@
-export const SET_QUERY = 'SET_QUERY';
+export const SET_QUERY = 'SET_QUERY'
 
-export const RESULT_LOADING = 'RESULT_LOADING';
-export const RESULT_SUCCESS = 'RESULT_SUCCESS';
-export const RESULT_ERROR = 'RESULT_ERROR';
+export const RESULT_LOADING = 'RESULT_LOADING'
+export const RESULT_SUCCESS = 'RESULT_SUCCESS'
+export const RESULT_ERROR = 'RESULT_ERROR'

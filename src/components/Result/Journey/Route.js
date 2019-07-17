@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import Path from './Path'
 
 function Route(data) {
@@ -15,7 +15,7 @@ function Route(data) {
     <div>
       { getPaths() }
     </div>
-  );
+  )
 }
 
-export default Route;
+export default Route

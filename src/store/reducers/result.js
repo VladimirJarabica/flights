@@ -1,4 +1,4 @@
-import * as types from '../actions/actionTypes';
+import * as types from '../actions/actionTypes'
 
 export default (state = {}, action) => {
 	switch(action.type) {
@@ -7,13 +7,13 @@ export default (state = {}, action) => {
 				...state.result,
 				loading: true,
 				error: false
-			};
+			}
 		case types.RESULT_SUCCESS:
 			return {
 				loading: false,
 				error: false,
 				data: action.data
-			};
+			}
 		case types.RESULT_ERROR:
 			return {
 				...state.result,
@@ -21,6 +21,6 @@ export default (state = {}, action) => {
 				error: false
 			}
 		default:
-			return state;
+			return state
 	}
 }

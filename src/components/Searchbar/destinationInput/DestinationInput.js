@@ -29,40 +29,27 @@ export default function DestinationInput(props) {
       })
   }
   
-  const onChange = (event, { newValue }) => {
-    setValue(newValue)
-  }
-  
   const renderSuggestion = suggestion => {
     props.onChange(suggestion.id)
-    
     return <span>{suggestion.name}</span>
-  }
-  
-  const onSuggestionsFetchRequested = ({ value }) => {
-    loadSuggestions(value);
-  }
-  
-  const onSuggestionsClearRequested = () => {
-    setSuggestions([])
   }
   
   const inputProps = {
     placeholder: props.placeholder,
     value,
-    onChange
-  };
+    onChange: (event, { newValue }) => setValue(newValue)
+  }
   
   return (
     <div>
       { isLoading }
       <Autosuggest
         suggestions={suggestions}
-        onSuggestionsFetchRequested={onSuggestionsFetchRequested}
-        onSuggestionsClearRequested={onSuggestionsClearRequested}
+        onSuggestionsFetchRequested={({value}) => loadSuggestions(value)}
+        onSuggestionsClearRequested={() => setSuggestions([])}
         getSuggestionValue={suggestion => suggestion.name}
         renderSuggestion={renderSuggestion}
         inputProps={inputProps} />
     </div>
-  );
+  )
 }
