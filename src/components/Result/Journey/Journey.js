@@ -7,8 +7,11 @@ import styled from 'styled-components';
 const JourneyWrap = styled.div`
   margin: 10px;
   box-shadow: 0 0 7px #d6d6d6;
-  border-radius: 5px;
+  border-radius: 3px;
   overflow: hidden;
+  
+  font-family: helvetica;
+  font-size: 13px;
 `;
 
 const Routes = styled.div`

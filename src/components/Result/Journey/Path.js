@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const PathWrap = styled.div`
   clear: both;
-  border-bottom: 2px dotted #ccc;
+  border-bottom: 1px dotted #ccc;
   padding: 5px;
 `;
 

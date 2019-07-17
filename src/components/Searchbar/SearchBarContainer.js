@@ -1,13 +1,11 @@
-import { connect } from 'react-redux';
-import { setQuery } from '../../store/actions/query';
-import { findResult } from '../../store/actions/result'
-import SearchBar from './SearchBar';
+import { connect } from 'react-redux'
+import { setQuery } from '../../store/actions/query'
+import SearchBar from './SearchBar'
 
 const mapDispatchToProps = dispatch => {
   return {
-    setQuery: data => dispatch(setQuery(data)),
-    findResult: data => dispatch(findResult(data))
+    setQuery: data => dispatch(setQuery(data))
   }
-};
+}
 
-export default connect(null, mapDispatchToProps,)(SearchBar);
+export default connect(null, mapDispatchToProps,)(SearchBar)

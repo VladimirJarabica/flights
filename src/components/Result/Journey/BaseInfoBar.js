@@ -2,8 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 const InfoBar = styled.div`
-  padding: 10px;
-  background: #d6eaff;
+  padding: 6px 8px;
+  background: #00C6AA;
+  color: #fff;
 `;
 
 const Price = styled.div`
