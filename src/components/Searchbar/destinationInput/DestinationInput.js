@@ -29,9 +29,9 @@ export default function DestinationInput(props) {
       })
   }
   
-  const renderSuggestion = suggestion => {
+  const getValue = suggestion => {
     props.onChange(suggestion.id)
-    return <span>{suggestion.name}</span>
+    return suggestion.name
   }
   
   const inputProps = {
@@ -47,8 +47,8 @@ export default function DestinationInput(props) {
         suggestions={suggestions}
         onSuggestionsFetchRequested={({value}) => loadSuggestions(value)}
         onSuggestionsClearRequested={() => setSuggestions([])}
-        getSuggestionValue={suggestion => suggestion.name}
-        renderSuggestion={renderSuggestion}
+        getSuggestionValue={getValue}
+        renderSuggestion={suggestion => <span>{suggestion.name}</span>}
         inputProps={inputProps} />
     </div>
   )
