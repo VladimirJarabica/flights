@@ -39,7 +39,7 @@ function BagInfo({ baglimit, price }) {
             <WeightIcon size={15} />
             { hold_weight } Kg<br />
             <PriceIcon size={15} />
-            { price[1] } EUR
+            { price[1] } €
           </BagWrap>
         </MoreWrap>
       }

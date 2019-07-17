@@ -9,8 +9,8 @@ export const findResult = (flightData) => {
 		let today = new Date()
 		let nextWeek = moment().add(7, 'days').toDate()
 		let data = {
-			flyFrom: flightData.from ? flightData.from : 'prague_cz',
-			to: flightData.to ? flightData.to : 'paris_fr',
+			flyFrom: flightData.from,
+			to: flightData.to,
 			dateFrom: flightData.dateFrom ? moment(flightData.dateFrom).format('DD/MM/YYYY') : today,
 			dateTo: flightData.dateFrom ? moment(flightData.dateFrom).format('DD/MM/YYYY') : today,
 			v: 2,

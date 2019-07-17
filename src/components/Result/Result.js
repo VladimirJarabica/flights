@@ -1,5 +1,5 @@
 import React from 'react'
-import Journey from './Journey/Journey'
+import Journey from './Item/Journey'
 
 function Result({ data }) {
   
