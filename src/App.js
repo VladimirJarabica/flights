@@ -3,6 +3,11 @@ import SearchBar from './components/Searchbar/SearchBarContainer'
 import Result from './components/Result/Result'
 import loader from './loader.gif'
 import NoResult from './components/Result/NoResult'
+import styled from 'styled-components'
+
+const LoaderWrap = styled.div`
+  text-align: center;
+`
 
 function App({ result }) {
   return (
@@ -13,7 +18,11 @@ function App({ result }) {
         <Result data={result.data} /> :
         <NoResult />
       ) }
-      { result.loading && <img src={loader} alt="Loading..." /> }
+      { result.loading &&
+      <LoaderWrap>
+        <img src={loader} alt="Loading..." />
+      </LoaderWrap>
+      }
     </div>
   )
 }
