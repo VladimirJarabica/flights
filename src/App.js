@@ -1,7 +1,7 @@
 import React from 'react'
 import SearchBar from './components/Searchbar/SearchBarContainer'
 import Result from './components/Result/Result'
-import loader from './loader.gif'
+import loader from './loader.svg'
 import NoResult from './components/Result/NoResult'
 import styled from 'styled-components'
 
