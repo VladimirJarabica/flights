@@ -1,10 +1,10 @@
 import styled from 'styled-components'
-import DatePicker from 'react-datepicker/es'
+import DatePicker from 'react-datepicker'
 import { PlaneDeparture } from 'styled-icons/fa-solid/PlaneDeparture'
 import { PlaneArrival } from 'styled-icons/fa-solid/PlaneArrival'
 
 export const PlaceWrap = styled.div`
-  width: 500px;
+  width: 550px;
   margin: 0 auto;
 `
 
@@ -18,7 +18,7 @@ export const ArrowWrap = styled(DestWrap)`
 `
 
 export const DateWrap = styled.div`
-  width: 500px;
+  width: 550px;
   margin: 0 auto;
   clear: both;
 `
@@ -27,7 +27,6 @@ export const StyledDatePickerWrap = styled.div`
   border: 1px solid #aaa;
   border-radius: 4px;
   width: 200px;
-  box-sizing: border-box;
   float: left;
   padding: 6px 13px;
 `
